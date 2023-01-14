@@ -1,13 +1,10 @@
 <template>
-    <div class="container mx-auto">
-        <AppHeader />
-            <slot />
-
-            <pre class="bg-gray-100">{{ route }}</pre>
-        <AppFooter />
-    </div>
+  <AppHeader />
+  <slot />
+  <!-- <pre class="bg-gray-100 rounded-sm">{{ route }}</pre> -->
+  <AppFooter />
 </template>
 
 <script setup>
-    const route = useRoute()
+// const route = useRoute();
 </script>

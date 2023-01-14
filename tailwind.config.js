@@ -7,5 +7,8 @@ export default {
         primary: defaultTheme.colors.green
       }
     }
-  }
+  },
+  plugins: [
+    require('@tailwindcss/aspect-ratio'),
+  ],
 }

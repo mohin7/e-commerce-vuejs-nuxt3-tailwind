@@ -1,12 +1,8 @@
 <template>
-    <h1>Index page</h1>
+   <div class="container mx-auto">
+    <product-lists/>
+  </div>
     
 </template>
 <script setup>
-  definePageMeta({
-    layout: 'default'
-  });
-
-
-
 </script>
