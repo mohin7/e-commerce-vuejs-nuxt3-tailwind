@@ -1,6 +1,7 @@
 import defaultTheme from 'tailwindcss/defaultTheme'
 
 export default {
+  content: ["./dist/**/*.html"],
   theme: {
     extend: {
       colors: {
