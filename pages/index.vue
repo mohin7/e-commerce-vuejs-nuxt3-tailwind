@@ -5,5 +5,11 @@
   </div>
     
 </template>
-<script setup>
+<script lang="ts" setup>
+definePageMeta({
+  pageTransition: {
+    name: 'bounce',
+    mode: 'out-in' // default
+  }
+})
 </script>
