@@ -16,6 +16,7 @@
     "@tailwindcss/line-clamp": "^0.4.2",
     "@tailwindcss/typography": "^0.5.9",
     "axios": "^1.2.2",
-    "daisyui": "^2.49.0"
+    "daisyui": "^2.49.0",
+    "vue-router": "^4.1.6"
   }
 }

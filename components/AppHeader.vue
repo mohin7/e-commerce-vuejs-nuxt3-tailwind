@@ -297,7 +297,7 @@
 
         <div class="space-y-6 border-t border-gray-200 py-6 px-4">
           <div class="flow-root">
-            <a href="#" class="-m-2 block p-2 font-medium text-gray-900">Sign in</a>
+            <nuxt-link to="/auth/login" class="-m-2 block p-2 font-medium text-gray-900">Sign in</nuxt-link>
           </div>
           <div class="flow-root">
             <a href="#" class="-m-2 block p-2 font-medium text-gray-900">Create account</a>
@@ -633,9 +633,9 @@
 
           <div class="ml-auto flex items-center">
             <div class="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-              <a href="#" class="text-sm font-medium text-gray-700 hover:text-gray-800">Sign in</a>
+              <nuxt-link to="/auth/login" class="text-sm font-medium text-gray-700 hover:text-gray-800">Sign in</nuxt-link>
               <span class="h-6 w-px bg-gray-200" aria-hidden="true"></span>
-              <a href="#" class="text-sm font-medium text-gray-700 hover:text-gray-800">Create account</a>
+              <nuxt-link to="/auth/signup" class="text-sm font-medium text-gray-700 hover:text-gray-800">Create account</nuxt-link>
             </div>
 
             <div class="hidden lg:ml-8 lg:flex">

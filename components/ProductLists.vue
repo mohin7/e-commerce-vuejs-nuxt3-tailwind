@@ -37,6 +37,7 @@
 
 <script setup>
 const { data: allProducts } = await useFetch(
+//   'http://localhost:3000/api/products'
   'https://fakestoreapi.com/products'
 )
 

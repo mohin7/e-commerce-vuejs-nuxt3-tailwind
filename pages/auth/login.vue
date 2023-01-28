@@ -10,35 +10,35 @@
                                         <img class="mx-auto w-48"
                                             src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
                                             alt="logo" />
-                                        <h4 class="text-xl font-semibold mt-1 mb-12 pb-1">We are The Lotus Team</h4>
+                                        <h4 class="text-xl font-semibold mt-1 mb-12 pb-1">Mohin Ecommerce Project</h4>
                                     </div>
-                                    <form>
+                                    <form @submit.prevent="login">
                                         <p class="mb-4">Please login to your account</p>
                                         <div class="mb-4">
-                                            <input type="text"
+                                            <input type="text" v-model="username" required
                                                 class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                                                id="exampleFormControlInput1" placeholder="Username" />
+                                                 placeholder="Username" />
                                         </div>
                                         <div class="mb-4">
-                                            <input type="password"
+                                            <input type="password" v-model="password"
                                                 class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                                                id="exampleFormControlInput1" placeholder="Password" />
+                                                 placeholder="Password" required/>
                                         </div>
                                         <div class="text-center pt-1 mb-12 pb-1">
                                             <button
                                                 class="inline-block px-6 py-2.5 bg-primary text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full mb-3"
-                                                type="button" data-mdb-ripple="true" data-mdb-ripple-color="light">
+                                                type="submit" data-mdb-ripple="true" data-mdb-ripple-color="light">
                                                 Log in
                                             </button>
-                                            <a class="text-gray-500" href="#!">Forgot password?</a>
+                                            <!-- <a class="text-gray-500" href="#!">Forgot password?</a> -->
                                         </div>
                                         <div class="flex items-center justify-between pb-6">
                                             <p class="mb-0 mr-2">Don't have an account?</p>
-                                            <button type="button"
+                                            <nuxt-link to="/auth/signup"
                                                 class="inline-block px-6 py-2 border-2 border-red-600 text-red-600 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
                                                 data-mdb-ripple="true" data-mdb-ripple-color="light">
                                                 Danger
-                                            </button>
+                                            </nuxt-link>
                                         </div>
                                     </form>
                                 </div>
@@ -61,3 +61,37 @@
             </div>
     </section>
 </template>
+<script>
+import { ref } from 'vue'
+import axios from 'axios'
+import { useRouter } from 'vue-router'
+
+export default {
+  setup() {
+    const username = ref('mor_2314')
+    const password = ref('83r5^_')
+    const router = useRouter()
+    
+    const login = async () => {
+      try {
+        const { data } = await axios.post('https://fakestoreapi.com/auth/login', {
+          username: username.value,
+          password: password.value
+        })
+        // handle success response, store token in local storage
+        console.log(data.token);
+        localStorage.setItem('token', data.token)
+        router.push('/welcome')
+      } catch (error) {
+        // handle error response, display error message to the user
+        console.log(error.response.data.message)
+      }
+    }
+    return {
+      username,
+      password,
+      login
+    }
+  }
+}
+</script>

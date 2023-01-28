@@ -10,35 +10,32 @@
                                         <img class="mx-auto w-48"
                                             src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
                                             alt="logo" />
-                                        <h4 class="text-xl font-semibold mt-1 mb-12 pb-1">We are The Lotus Team</h4>
+                                        <h4 class="text-xl font-semibold mt-1 mb-12 pb-1">Mohin Ecommerce Project</h4>
                                     </div>
                                     <form>
-                                        <p class="mb-4">Please login to your account</p>
+                                        <p class="mb-4">Please signup to your account</p>
+                                        <div class="mb-4">
+                                            <input type="email"
+                                                class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                                                 placeholder="Enter your email" />
+                                        </div>
                                         <div class="mb-4">
                                             <input type="text"
                                                 class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                                                id="exampleFormControlInput1" placeholder="Username" />
+                                                 placeholder="Set user name" />
                                         </div>
                                         <div class="mb-4">
                                             <input type="password"
                                                 class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                                                id="exampleFormControlInput1" placeholder="Password" />
+                                                 placeholder="Password" />
                                         </div>
                                         <div class="text-center pt-1 mb-12 pb-1">
                                             <button
                                                 class="inline-block px-6 py-2.5 bg-primary text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full mb-3"
                                                 type="button" data-mdb-ripple="true" data-mdb-ripple-color="light">
-                                                Log in
+                                                SIGN UP
                                             </button>
-                                            <a class="text-gray-500" href="#!">Forgot password?</a>
-                                        </div>
-                                        <div class="flex items-center justify-between pb-6">
-                                            <p class="mb-0 mr-2">Don't have an account?</p>
-                                            <button type="button"
-                                                class="inline-block px-6 py-2 border-2 border-red-600 text-red-600 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
-                                                data-mdb-ripple="true" data-mdb-ripple-color="light">
-                                                Danger
-                                            </button>
+                                           <p>Already have an account? <nuxt-link class="text-gray-500" href="/auth/login"> Login</nuxt-link></p> 
                                         </div>
                                     </form>
                                 </div>
