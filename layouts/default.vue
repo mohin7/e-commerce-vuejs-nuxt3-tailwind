@@ -2,7 +2,9 @@
   <AppHeader />
   <slot />
   <!-- <pre class="bg-gray-100 rounded-sm">{{ route }}</pre> -->
-  <AppFooter />
+  <div class="bg-gray-800 text-white">
+    <AppFooter />
+  </div>
 </template>
 
 <script setup>
