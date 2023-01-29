@@ -4,7 +4,7 @@
         <div class="bg-white">
             <div class="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
                 <div class="flex items-center justify-between">
-                    <h2 class="text-2xl font-bold tracking-tight text-gray-900">All {{ route.params.id }} product</h2>
+                    <h2 class="text-2xl font-bold tracking-tight text-gray-900">All <span class="bg-gray-200 px-2">{{ route.params.id }}</span> product</h2>
 
                     <div class="flex">
                         <!-- <select class="select select-bordered select-sm w-full max-w-[120px] mr-2" v-model="sorted">

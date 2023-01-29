@@ -15,7 +15,9 @@
                 </button>
 
                 <ul class="p-2 shadow bg-base-100 w-full relative z-50 max-h-80 overflow-y-auto" :class="[showSearchList ? 'block' : 'hidden']">
-                    <li v-for="(product,idx) in filterItems" :key="idx" class="px-2 py-2"><nuxt-link :to="`/products/${product.id}`">{{ product.title }} <span class="badge">{{ product.category }}</span></nuxt-link> </li>
+                    <li v-if="filterItems.length>0" v-for="(product,idx) in filterItems" :key="idx" class="px-2 py-2"><nuxt-link :to="`/products/${product.id}`">{{ product.title }} <span class="badge">{{ product.category }}</span></nuxt-link> </li>
+                    <li v-else class="px-2 py-2">Sorry, No Product Available!</li>
+
                 </ul>
             </div>
             <div class="mt-4 flex gap-2">

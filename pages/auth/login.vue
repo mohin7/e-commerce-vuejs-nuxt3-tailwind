@@ -79,7 +79,6 @@ export default {
           password: password.value
         })
         // handle success response, store token in local storage
-        console.log(data.token);
         localStorage.setItem('token', data.token)
         router.push('/welcome')
       } catch (error) {
