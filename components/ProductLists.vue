@@ -1,8 +1,20 @@
 <template>
 <div class="bg-white">
     <div class="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
-        <h2 class="text-2xl font-bold tracking-tight text-gray-900">All Products</h2>
+        <div class="flex items-center justify-between">
+            <h2 class="text-2xl font-bold tracking-tight text-gray-900">All Products</h2>
 
+            <div class="flex">
+                <!-- <select class="select select-bordered select-sm w-full max-w-[120px] mr-2" v-model="sorted">
+                    <option v-for="(srt,idx) in sort" :key="idx" :value="srt.value">{{ srt.label }}</option>
+                </select> -->
+
+                <select class="select select-bordered select-sm w-full max-w-[120px]" v-model="selected">
+                    <option v-for="(option,idx) in options" :key="idx" :value="option.value">{{ option.label }}</option>
+                </select>
+
+            </div>
+        </div>
         <div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
         <div class="group relative border rounded-md" v-if="allProducts"  v-for="product in allProducts" :key="product.id">
             <div class="min-h-80 aspect-w-1 aspect-h-1 p-10 w-full overflow-hidden rounded-md bg-white group-hover:opacity-75 lg:aspect-none lg:h-80">
@@ -36,9 +48,29 @@
 </template>
 
 <script setup>
-const { data: allProducts } = await useFetch(
-//   'http://localhost:3000/api/products'
-  'https://fakestoreapi.com/products'
-)
+import { ref, watchEffect } from 'vue'
 
+const options = [
+    { value: 8, label: 'Show 8' },
+    { value: 12, label: 'Show 12' },
+    { value: 16, label: 'Show 16'},
+    { value: 20, label: 'Show 20'},
+    { value: 24, label: 'Show 24'},
+    { value: 28, label: 'Show 28'},
+];
+const sort = [
+    { value: 'asc', label: 'Sort ASC' },
+    { value: 'desc', label: 'Sort DESC' },
+]
+const allProducts = ref([])
+const selected = ref(options[0].value)
+// const sorted = ref(sort[0].value)
+
+// const { data: category } = await useFetch('https://fakestoreapi.com/products/categories')
+
+
+watchEffect(async () => {
+  const url = `https://fakestoreapi.com/products?limit=${selected.value}`
+  allProducts.value = await (await fetch(url)).json()
+})
 </script>

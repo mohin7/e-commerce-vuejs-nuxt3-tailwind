@@ -97,11 +97,6 @@ const { data: product } = await useFetch(
   `https://fakestoreapi.com/products/${route.params.id}`
 )
 
-// watchEffect(async () => {
-//   const url = `https://fakestoreapi.com/products/${route.params.id}`
-//   product.value = await (await fetch(url)).json()
-// })
-
 definePageMeta({
   pageTransition: {
     name: 'bounce',
