@@ -8,7 +8,7 @@ export default defineNuxtConfig({
           apiBase: '/api'
         }
     },
-    modules: ['@nuxtjs/tailwindcss',],
+    modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt',],
     app: {
       pageTransition: {
         name: 'fade',

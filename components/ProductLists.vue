@@ -1,6 +1,6 @@
 <template>
     <div class="bg-white">
-        <code>{{ addToCart }}</code>
+        <code>{{ cartData.length }}</code>
         <div class="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
             <div class="flex items-center justify-between">
                 <h2 class="text-2xl font-bold tracking-tight text-gray-900">All Products</h2>
@@ -38,7 +38,7 @@
                                 :title="product.description">{{ product.description }}</p>
                             <div class="flex justify-between items-center mt-5">
                                 <p class="text-xl font-medium text-gray-900 my-1 ">${{ product.price }}</p>
-                                <button @click="addToCartFn(product.id)"
+                                <button @click="addCart(product.id)"
                                     class="text-sm font-medium bg-indigo-100 text-indigo-600 border border-indigo-600 w-32 h-8 rounded">ADD
                                     TO CART</button>
                             </div>
@@ -56,8 +56,15 @@
 </template>
 
 <script setup>
-import axios from 'axios';
+// import axios from 'axios';
+import { useCounterStore } from '@/stores/counter'
 import { ref, watchEffect } from 'vue'
+
+const counter = useCounterStore()
+
+const addCart = counter.addToCartFn
+const cartData = counter.addToCart
+
 
 const options = [
     { value: 8, label: 'Show 8' },
@@ -79,13 +86,4 @@ watchEffect(async () => {
     const url = `https://fakestoreapi.com/products?limit=${selected.value}`
     allProducts.value = await (await fetch(url)).json()
 })
-const addToCart = ref([]);
-function addToCartFn(id){
-    allProducts.value.filter(product=>{
-        if(product.id == id){
-            addToCart.value.push(product)
-        }
-    })
-}
-
 </script>
