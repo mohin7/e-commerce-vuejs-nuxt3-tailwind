@@ -1,5 +1,5 @@
 <template>
-<div class="">
+<div class="mb-32">
   <div class="bg-white container mx-auto" v-if="product">
   <div class="pt-6">
     <nav aria-label="Breadcrumb">

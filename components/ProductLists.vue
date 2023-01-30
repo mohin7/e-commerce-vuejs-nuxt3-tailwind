@@ -1,6 +1,5 @@
 <template>
     <div class="bg-white">
-        <code>{{ cartData.length }}</code>
         <div class="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
             <div class="flex items-center justify-between">
                 <h2 class="text-2xl font-bold tracking-tight text-gray-900">All Products</h2>
@@ -57,13 +56,13 @@
 
 <script setup>
 // import axios from 'axios';
-import { useCounterStore } from '@/stores/counter'
+import { useCartStore } from '@/stores/cart'
 import { ref, watchEffect } from 'vue'
 
-const counter = useCounterStore()
+const cart = useCartStore()
 
-const addCart = counter.addToCartFn
-const cartData = counter.addToCart
+const addCart = cart.addToCartFn
+const cartData = cart.addToCart
 
 
 const options = [
@@ -84,6 +83,7 @@ const selected = ref(options[0].value)
 
 watchEffect(async () => {
     const url = `https://fakestoreapi.com/products?limit=${selected.value}`
+    // const url = `http://localhost:3000/api/products`
     allProducts.value = await (await fetch(url)).json()
 })
 </script>
