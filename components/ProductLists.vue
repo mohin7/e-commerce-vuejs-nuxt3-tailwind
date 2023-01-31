@@ -21,7 +21,7 @@
                     :key="product.id">
                     <div
                         class="min-h-80 aspect-w-1 aspect-h-1 p-10 w-full overflow-hidden rounded-md bg-white group-hover:opacity-75 lg:aspect-none lg:h-80">
-                        <img src="https://via.placeholder.com/150" alt="T-shirt"
+                        <img :src="product.image" alt="T-shirt"
                             class="h-full w-full object-contain object-center lg:h-full lg:w-full" loading="eager">
                     </div>
                     <div class="my-4 px-4 flex justify-between">
