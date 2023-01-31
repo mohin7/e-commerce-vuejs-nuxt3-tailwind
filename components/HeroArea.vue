@@ -1,8 +1,8 @@
 <template>
     <div class="hero-area bg-indigo-100">
         <div class="flex flex-col justify-center items-center container mx-auto h-80">
-            <h1 class="text-5xl font-bold">Groceries Delivered in 90 Minute</h1>
-            <p class="mt-4 mb-6 text-gray-800">Get your healthy foods & snacks delivered at your doorsteps all day
+            <h1 class="text-5xl font-bold">We Delivered within 24 Hours in Dhaka City.</h1>
+            <p class="mt-4 mb-6 text-gray-800">Get your Gadgets, Jewlery and Cloth delivered at your doorsteps all day
                 everyday</p>
             <div class="input-form relative h-10 w-1/4">
                 <input type="search" placeholder="Search your prodcuts from here" class="pr-10 px-4 h-full w-full" v-model="search" @click="showSearchList = !showSearchList">

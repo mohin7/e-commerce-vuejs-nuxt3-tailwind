@@ -17,12 +17,16 @@
                 </div>
             </div>
             <div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+               
+
                 <div class="group relative border rounded-md" v-if="allProducts" v-for="product in allProducts"
                     :key="product.id">
                     <div
                         class="min-h-80 aspect-w-1 aspect-h-1 p-10 w-full overflow-hidden rounded-md bg-white group-hover:opacity-75 lg:aspect-none lg:h-80">
+                        
                         <img :src="product.image" alt="T-shirt"
                             class="h-full w-full object-contain object-center lg:h-full lg:w-full" loading="eager">
+                        <!-- <skeletonloader /> -->
                     </div>
                     <div class="my-4 px-4 flex justify-between">
                         <div class="">
@@ -60,6 +64,8 @@ import { useCartStore } from '@/stores/cart'
 import { ref, watchEffect } from 'vue'
 
 const cart = useCartStore()
+
+const toCart = ref(true)
 
 const addCart = cart.addToCartFn
 const cartData = cart.addToCart

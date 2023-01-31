@@ -23,7 +23,7 @@
                         :key="product.id">
                         <div
                             class="min-h-80 aspect-w-1 aspect-h-1 p-10 w-full overflow-hidden rounded-md bg-white group-hover:opacity-75 lg:aspect-none lg:h-80">
-                            <img src="https://via.placeholder.com/150" alt="T-shirt"
+                            <img :src="product.image" alt="T-shirt"
                                 class="h-full w-full object-contain object-center lg:h-full lg:w-full" loading="eager">
                         </div>
                         <div class="my-4 px-4 flex justify-between">
@@ -39,7 +39,7 @@
                                     :title="product.description">{{ product.description }}</p>
                                 <div class="flex justify-between items-center mt-5">
                                     <p class="text-xl font-medium text-gray-900 my-1 ">${{ product.price }}</p>
-                                    <button
+                                    <button @click="addCart(product.id)"
                                         class="text-sm font-medium bg-indigo-100 text-indigo-600 border border-indigo-600 w-32 h-8 rounded">ADD
                                         TO CART</button>
                                 </div>
@@ -60,7 +60,20 @@
 
 <script setup>
 import { ref, watchEffect } from 'vue'
+import { useCartStore } from '@/stores/cart'
+
 const route = useRoute()
+
+// const product = ref(null)
+
+
+
+const cart = useCartStore()
+
+const toCart = ref(true)
+
+const addCart = cart.addToCartFn
+const cartData = cart.addToCart
 
 
 const options = [

@@ -55,7 +55,7 @@
 
         </div>
 
-        <button class="text-sm font-medium bg-indigo-600 text-white border border-indigo-600 w-32 h-10 rounded mt-10">ADD TO CART</button>
+        <button @click="addCart(product.id)" class="text-sm font-medium bg-indigo-600 text-white border border-indigo-600 w-32 h-10 rounded mt-10">ADD TO CART</button>
         <div class="mt-10">
           <h3 class="text-sm font-medium text-gray-900">Catagories</h3>
 
@@ -90,8 +90,22 @@
 
 <script setup>
 import { ref, watchEffect } from 'vue'
+import { useCartStore } from '@/stores/cart'
 const route = useRoute()
 // const product = ref(null)
+
+
+
+const cart = useCartStore()
+
+const toCart = ref(true)
+
+const addCart = cart.addToCartFn
+const cartData = cart.addToCart
+
+
+
+
 
 const { data: product } = await useFetch(
   `https://fakestoreapi.com/products/${route.params.id}`

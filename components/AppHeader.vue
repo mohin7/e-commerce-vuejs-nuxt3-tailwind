@@ -16,303 +16,8 @@
         From: "opacity-100"
         To: "opacity-0"
     -->
-    <div class="fixed inset-0 bg-black bg-opacity-25"></div>
 
-    <div class="fixed inset-0 z-40 flex">
-      <!--
-        Off-canvas menu, show/hide based on off-canvas menu state.
-
-        Entering: "transition ease-in-out duration-300 transform"
-          From: "-translate-x-full"
-          To: "translate-x-0"
-        Leaving: "transition ease-in-out duration-300 transform"
-          From: "translate-x-0"
-          To: "-translate-x-full"
-      -->
-      <div class="relative flex w-full max-w-xs flex-col overflow-y-auto bg-white pb-12 shadow-xl">
-        <div class="flex px-4 pt-5 pb-2">
-          <button type="button" class="-m-2 inline-flex items-center justify-center rounded-md p-2 text-gray-400">
-            <span class="sr-only">Close menu</span>
-            <!-- Heroicon name: outline/x-mark -->
-            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
-
-        <!-- Links -->
-        <div class="mt-2">
-          <div class="border-b border-gray-200">
-            <div class="-mb-px flex space-x-8 px-4" aria-orientation="horizontal" role="tablist">
-              <!-- Selected: "text-indigo-600 border-indigo-600", Not Selected: "text-gray-900 border-transparent" -->
-              <button id="tabs-1-tab-1" class="text-gray-900 border-transparent flex-1 whitespace-nowrap border-b-2 py-4 px-1 text-base font-medium" aria-controls="tabs-1-panel-1" role="tab" type="button">Women</button>
-
-              <!-- Selected: "text-indigo-600 border-indigo-600", Not Selected: "text-gray-900 border-transparent" -->
-              <button id="tabs-1-tab-2" class="text-gray-900 border-transparent flex-1 whitespace-nowrap border-b-2 py-4 px-1 text-base font-medium" aria-controls="tabs-1-panel-2" role="tab" type="button">Men</button>
-            </div>
-          </div>
-
-          <!-- 'Women' tab panel, show/hide based on tab state. -->
-          <div id="tabs-1-panel-1" class="space-y-10 px-4 pt-10 pb-8" aria-labelledby="tabs-1-tab-1" role="tabpanel" tabindex="0">
-            <div class="grid grid-cols-2 gap-x-4">
-              <div class="group relative text-sm">
-                <div class="aspect-w-1 aspect-h-1 overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
-                  <img src="https://tailwindui.com/img/ecommerce-images/mega-menu-category-01.jpg" alt="Models sitting back to back, wearing Basic Tee in black and bone." class="object-cover object-center">
-                </div>
-                <a href="#" class="mt-6 block font-medium text-gray-900">
-                  <span class="absolute inset-0 z-10" aria-hidden="true"></span>
-                  New Arrivals
-                </a>
-                <p aria-hidden="true" class="mt-1">Shop now</p>
-              </div>
-
-              <div class="group relative text-sm">
-                <div class="aspect-w-1 aspect-h-1 overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
-                  <img src="https://tailwindui.com/img/ecommerce-images/mega-menu-category-02.jpg" alt="Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees." class="object-cover object-center">
-                </div>
-                <a href="#" class="mt-6 block font-medium text-gray-900">
-                  <span class="absolute inset-0 z-10" aria-hidden="true"></span>
-                  Basic Tees
-                </a>
-                <p aria-hidden="true" class="mt-1">Shop now</p>
-              </div>
-            </div>
-
-            <div>
-              <p id="women-clothing-heading-mobile" class="font-medium text-gray-900">Clothing</p>
-              <ul role="list" aria-labelledby="women-clothing-heading-mobile" class="mt-6 flex flex-col space-y-6">
-                <li class="flow-root">
-                  <a href="#" class="-m-2 block p-2 text-gray-500">Tops</a>
-                </li>
-
-                <li class="flow-root">
-                  <a href="#" class="-m-2 block p-2 text-gray-500">Dresses</a>
-                </li>
-
-                <li class="flow-root">
-                  <a href="#" class="-m-2 block p-2 text-gray-500">Pants</a>
-                </li>
-
-                <li class="flow-root">
-                  <a href="#" class="-m-2 block p-2 text-gray-500">Denim</a>
-                </li>
-
-                <li class="flow-root">
-                  <a href="#" class="-m-2 block p-2 text-gray-500">Sweaters</a>
-                </li>
-
-                <li class="flow-root">
-                  <a href="#" class="-m-2 block p-2 text-gray-500">T-Shirts</a>
-                </li>
-
-                <li class="flow-root">
-                  <a href="#" class="-m-2 block p-2 text-gray-500">Jackets</a>
-                </li>
-
-                <li class="flow-root">
-                  <a href="#" class="-m-2 block p-2 text-gray-500">Activewear</a>
-                </li>
-
-                <li class="flow-root">
-                  <a href="#" class="-m-2 block p-2 text-gray-500">Browse All</a>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <p id="women-accessories-heading-mobile" class="font-medium text-gray-900">Accessories</p>
-              <ul role="list" aria-labelledby="women-accessories-heading-mobile" class="mt-6 flex flex-col space-y-6">
-                <li class="flow-root">
-                  <a href="#" class="-m-2 block p-2 text-gray-500">Watches</a>
-                </li>
-
-                <li class="flow-root">
-                  <a href="#" class="-m-2 block p-2 text-gray-500">Wallets</a>
-                </li>
-
-                <li class="flow-root">
-                  <a href="#" class="-m-2 block p-2 text-gray-500">Bags</a>
-                </li>
-
-                <li class="flow-root">
-                  <a href="#" class="-m-2 block p-2 text-gray-500">Sunglasses</a>
-                </li>
-
-                <li class="flow-root">
-                  <a href="#" class="-m-2 block p-2 text-gray-500">Hats</a>
-                </li>
-
-                <li class="flow-root">
-                  <a href="#" class="-m-2 block p-2 text-gray-500">Belts</a>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <p id="women-brands-heading-mobile" class="font-medium text-gray-900">Brands</p>
-              <ul role="list" aria-labelledby="women-brands-heading-mobile" class="mt-6 flex flex-col space-y-6">
-                <li class="flow-root">
-                  <a href="#" class="-m-2 block p-2 text-gray-500">Full Nelson</a>
-                </li>
-
-                <li class="flow-root">
-                  <a href="#" class="-m-2 block p-2 text-gray-500">My Way</a>
-                </li>
-
-                <li class="flow-root">
-                  <a href="#" class="-m-2 block p-2 text-gray-500">Re-Arranged</a>
-                </li>
-
-                <li class="flow-root">
-                  <a href="#" class="-m-2 block p-2 text-gray-500">Counterfeit</a>
-                </li>
-
-                <li class="flow-root">
-                  <a href="#" class="-m-2 block p-2 text-gray-500">Significant Other</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- 'Men' tab panel, show/hide based on tab state. -->
-          <div id="tabs-1-panel-2" class="space-y-10 px-4 pt-10 pb-8" aria-labelledby="tabs-1-tab-2" role="tabpanel" tabindex="0">
-            <div class="grid grid-cols-2 gap-x-4">
-              <div class="group relative text-sm">
-                <div class="aspect-w-1 aspect-h-1 overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
-                  <img src="https://tailwindui.com/img/ecommerce-images/product-page-04-detail-product-shot-01.jpg" alt="Drawstring top with elastic loop closure and textured interior padding." class="object-cover object-center">
-                </div>
-                <a href="#" class="mt-6 block font-medium text-gray-900">
-                  <span class="absolute inset-0 z-10" aria-hidden="true"></span>
-                  New Arrivals
-                </a>
-                <p aria-hidden="true" class="mt-1">Shop now</p>
-              </div>
-
-              <div class="group relative text-sm">
-                <div class="aspect-w-1 aspect-h-1 overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
-                  <img src="https://tailwindui.com/img/ecommerce-images/category-page-02-image-card-06.jpg" alt="Three shirts in gray, white, and blue arranged on table with same line drawing of hands and shapes overlapping on front of shirt." class="object-cover object-center">
-                </div>
-                <a href="#" class="mt-6 block font-medium text-gray-900">
-                  <span class="absolute inset-0 z-10" aria-hidden="true"></span>
-                  Artwork Tees
-                </a>
-                <p aria-hidden="true" class="mt-1">Shop now</p>
-              </div>
-            </div>
-
-            <div>
-              <p id="men-clothing-heading-mobile" class="font-medium text-gray-900">Clothing</p>
-              <ul role="list" aria-labelledby="men-clothing-heading-mobile" class="mt-6 flex flex-col space-y-6">
-                <li class="flow-root">
-                  <a href="#" class="-m-2 block p-2 text-gray-500">Tops</a>
-                </li>
-
-                <li class="flow-root">
-                  <a href="#" class="-m-2 block p-2 text-gray-500">Pants</a>
-                </li>
-
-                <li class="flow-root">
-                  <a href="#" class="-m-2 block p-2 text-gray-500">Sweaters</a>
-                </li>
-
-                <li class="flow-root">
-                  <a href="#" class="-m-2 block p-2 text-gray-500">T-Shirts</a>
-                </li>
-
-                <li class="flow-root">
-                  <a href="#" class="-m-2 block p-2 text-gray-500">Jackets</a>
-                </li>
-
-                <li class="flow-root">
-                  <a href="#" class="-m-2 block p-2 text-gray-500">Activewear</a>
-                </li>
-
-                <li class="flow-root">
-                  <a href="#" class="-m-2 block p-2 text-gray-500">Browse All</a>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <p id="men-accessories-heading-mobile" class="font-medium text-gray-900">Accessories</p>
-              <ul role="list" aria-labelledby="men-accessories-heading-mobile" class="mt-6 flex flex-col space-y-6">
-                <li class="flow-root">
-                  <a href="#" class="-m-2 block p-2 text-gray-500">Watches</a>
-                </li>
-
-                <li class="flow-root">
-                  <a href="#" class="-m-2 block p-2 text-gray-500">Wallets</a>
-                </li>
-
-                <li class="flow-root">
-                  <a href="#" class="-m-2 block p-2 text-gray-500">Bags</a>
-                </li>
-
-                <li class="flow-root">
-                  <a href="#" class="-m-2 block p-2 text-gray-500">Sunglasses</a>
-                </li>
-
-                <li class="flow-root">
-                  <a href="#" class="-m-2 block p-2 text-gray-500">Hats</a>
-                </li>
-
-                <li class="flow-root">
-                  <a href="#" class="-m-2 block p-2 text-gray-500">Belts</a>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <p id="men-brands-heading-mobile" class="font-medium text-gray-900">Brands</p>
-              <ul role="list" aria-labelledby="men-brands-heading-mobile" class="mt-6 flex flex-col space-y-6">
-                <li class="flow-root">
-                  <a href="#" class="-m-2 block p-2 text-gray-500">Re-Arranged</a>
-                </li>
-
-                <li class="flow-root">
-                  <a href="#" class="-m-2 block p-2 text-gray-500">Counterfeit</a>
-                </li>
-
-                <li class="flow-root">
-                  <a href="#" class="-m-2 block p-2 text-gray-500">Full Nelson</a>
-                </li>
-
-                <li class="flow-root">
-                  <a href="#" class="-m-2 block p-2 text-gray-500">My Way</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="space-y-6 border-t border-gray-200 py-6 px-4">
-          <div class="flow-root">
-            <a href="#" class="-m-2 block p-2 font-medium text-gray-900">Company</a>
-          </div>
-
-          <div class="flow-root">
-            <a href="#" class="-m-2 block p-2 font-medium text-gray-900">Stores</a>
-          </div>
-        </div>
-
-        <div class="space-y-6 border-t border-gray-200 py-6 px-4">
-          <div class="flow-root">
-            <nuxt-link to="/auth/login" class="-m-2 block p-2 font-medium text-gray-900">Sign in</nuxt-link>
-          </div>
-          <div class="flow-root">
-            <a href="#" class="-m-2 block p-2 font-medium text-gray-900">Create account</a>
-          </div>
-        </div>
-
-        <div class="border-t border-gray-200 py-6 px-4">
-          <a href="#" class="-m-2 flex items-center p-2">
-            <img src="https://tailwindui.com/img/flags/flag-canada.svg" alt="" class="block h-auto w-5 flex-shrink-0">
-            <span class="ml-3 block text-base font-medium text-gray-900">CAD</span>
-            <span class="sr-only">, change currency</span>
-          </a>
-        </div>
-      </div>
-    </div>
+    
   </div>
 
   <header class="relative bg-white">
@@ -322,19 +27,13 @@
       <div class="mx-auto container">
         <div class="flex h-16 items-center">
           <!-- Mobile menu toggle, controls the 'mobileMenuOpen' state. -->
-          <button type="button" class="rounded-md bg-white p-2 text-gray-400 lg:hidden">
-            <span class="sr-only">Open menu</span>
-            <!-- Heroicon name: outline/bars-3 -->
-            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-            </svg>
-          </button>
-
+        
           <!-- Logo -->
           <div class="ml-4 flex lg:ml-0">
             <nuxt-link to="/">
               <span class="sr-only">Company</span>
-              <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="">
+              <div class="flex items-center"><img class="h-8 w-auto mr-2" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="">
+             <h1 class="font-bold"> BestBuy <span class="text-primary">Online</span></h1></div>
             </nuxt-link>
           </div>
 
@@ -344,7 +43,7 @@
               <div class="flex">
                 <div class="relative flex">
                   <!-- Item active: "border-indigo-600 text-indigo-600", Item inactive: "border-transparent text-gray-700 hover:text-gray-800" -->
-                  <button type="button" class="border-transparent text-gray-700 hover:text-gray-800 relative z-10 -mb-px flex items-center border-b-2 pt-px text-sm font-medium transition-colors duration-200 ease-out" aria-expanded="false">Women</button>
+                  <nuxt-link to="/category/women's%20clothing" type="button" class="border-transparent text-gray-700 hover:text-gray-800 relative z-10 -mb-px flex items-center border-b-2 pt-px text-sm font-medium transition-colors duration-200 ease-out" aria-expanded="false">Women</nuxt-link>
                 </div>
 
                 <!--
@@ -492,7 +191,7 @@
               <div class="flex">
                 <div class="relative flex">
                   <!-- Item active: "border-indigo-600 text-indigo-600", Item inactive: "border-transparent text-gray-700 hover:text-gray-800" -->
-                  <button type="button" class="border-transparent text-gray-700 hover:text-gray-800 relative z-10 -mb-px flex items-center border-b-2 pt-px text-sm font-medium transition-colors duration-200 ease-out" aria-expanded="false">Men</button>
+                  <nuxt-link to="/category/men's%20clothing" type="button" class="border-transparent text-gray-700 hover:text-gray-800 relative z-10 -mb-px flex items-center border-b-2 pt-px text-sm font-medium transition-colors duration-200 ease-out" aria-expanded="false">Men</nuxt-link>
                 </div>
 
                 <!--
@@ -625,9 +324,9 @@
                 </div>
               </div>
 
-              <a href="#" class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800">Company</a>
+              <nuxt-link to="/category/jewelery" class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800">Jewlery</nuxt-link>
 
-              <a href="#" class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800">Stores</a>
+              <nuxt-link href="/category/electronics" class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800">Electronics</nuxt-link>
             </div>
           </div>
 
